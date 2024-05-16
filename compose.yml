@@ -1,0 +1,16 @@
+version: '1'
+services:
+  server:
+    build: .
+    image: my-golang-app
+    container_name: golang-server3
+    ports:
+      - "8082:8080"
+    volumes:
+      - .:/app
+    networks:
+      - docker-practice
+
+networks:
+  docker-practice:
+    name: docker-practice
